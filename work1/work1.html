@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <style>
+        body {
+            font-family: "Noto Sans Thai", sans-serif;
+        }
+
+        #view2-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #view2 .col {
+            padding: 4px;
+        }
+
+        #view2 .col img {
+            width: 100%;
+
+        }
+
+        #view2 {
+            width: 50%;
+        }
+    </style>
+
+    <title>Work 1: JQuery + Boostrap Matching Game</title>
+</head>
+
+<body>
+
+    <div class="container text-center mt-4">
+        <h1>Work 1: JQuery + Boostrap Matching Game</h1>
+        <hr>
+
+        <div id="view1">
+            <button id="playBtn" class="btn btn-success">เริ่มเล่น</button>
+            <a href="index.html" class="btn btn-danger">กลับหน้าหลัก</a>
+        </div>
+
+        <div id="view2-container">
+
+            <div id="view2">
+
+                <div class="row">
+                    <div class="col"><img src='img/0.jpg' id='img1'></div>
+                    <div class="col"><img src='img/0.jpg' id='img2'></div>
+                    <div class="col"><img src='img/0.jpg' id='img3'></div>
+                    <div class="col"><img src='img/0.jpg' id='img4'></div>
+                    <div class="col"><img src='img/0.jpg' id='img5'></div>
+                    <div class="col"><img src='img/0.jpg' id='img6'></div>
+                </div>
+
+                <div class="row">
+                    <div class="col"><img src='img/0.jpg' id='img7'></div>
+                    <div class="col"><img src='img/0.jpg' id='img8'></div>
+                    <div class="col"><img src='img/0.jpg' id='img9'></div>
+                    <div class="col"><img src='img/0.jpg' id='img10'></div>
+                    <div class="col"><img src='img/0.jpg' id='img11'></div>
+                    <div class="col"><img src='img/0.jpg' id='img12'></div>
+                </div>
+
+                <div class="row">
+                    <div class="col"><img src='img/0.jpg' id='img13'></div>
+                    <div class="col"><img src='img/0.jpg' id='img14'></div>
+                    <div class="col"><img src='img/0.jpg' id='img15'></div>
+                    <div class="col"><img src='img/0.jpg' id='img16'></div>
+                    <div class="col"><img src='img/0.jpg' id='img17'></div>
+                    <div class="col"><img src='img/0.jpg' id='img18'></div>
+                </div>
+
+                <div class="row">
+                    <div class="col"><img src='img/0.jpg' id='img19'></div>
+                    <div class="col"><img src='img/0.jpg' id='img20'></div>
+                    <div class="col"><img src='img/0.jpg' id='img21'></div>
+                    <div class="col"><img src='img/0.jpg' id='img22'></div>
+                    <div class="col"><img src='img/0.jpg' id='img23'></div>
+                    <div class="col"><img src='img/0.jpg' id='img24'></div>
+                </div>
+
+                <div class="row">
+                    <div class="col"><img src='img/0.jpg' id='img25'></div>
+                    <div class="col"><img src='img/0.jpg' id='img26'></div>
+                    <div class="col"><img src='img/0.jpg' id='img27'></div>
+                    <div class="col"><img src='img/0.jpg' id='img28'></div>
+                    <div class="col"><img src='img/0.jpg' id='img29'></div>
+                    <div class="col"><img src='img/0.jpg' id='img30'></div>
+                </div>
+
+                <div class="row">
+                    <div class="col"><img src='img/0.jpg' id='img31'></div>
+                    <div class="col"><img src='img/0.jpg' id='img32'></div>
+                    <div class="col"><img src='img/0.jpg' id='img33'></div>
+                    <div class="col"><img src='img/0.jpg' id='img34'></div>
+                    <div class="col"><img src='img/0.jpg' id='img35'></div>
+                    <div class="col"><img src='img/0.jpg' id='img36'></div>
+                </div>
+
+
+                <button id="stopBtn" class="btn btn-danger">ออกจากเกม</button>
+            </div>
+
+        </div>
+
+        <div id="view3">
+            <h1>ยินดีด้วยคุณชนะเกมเเล้ว</h1>
+            <button id="playBtn" class="btn btn-primary">ok</button>
+        </div>
+
+        <hr>
+        <div class="container">
+            <h5>วิชา SC310006 (SC362202) Mobile and Web Application Development Sec.2</h5>
+            <h5>นายรัฐภูมิ ธนาโชติอัครโภคิน 643021335-2</h5>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+    <script>
+        $(function () {
+            $("#view2").hide();
+            $("#view3").hide();
+            $("#playBtn").click(startGame);
+            $("#stopBtn").click(stopGame);
+            $("#view2 img").click(imgClick);
+        });
+
+
+        var open_count = 0;
+        var open_card1 = 0;
+        var open_card2 = 0;
+        var all_card = 36;
+
+
+        function imgClick() {
+
+            if ($(this).attr("state") != 0) return;
+            if (open_count >= 2) return;
+
+
+            open_count++;
+            var s = $(this).attr("srcx");
+            if (open_count == 1) open_card1 = s;
+            if (open_count == 2) open_card2 = s;
+            $(this).hide().attr("src", s).slideDown(500);
+            $(this).attr("state", 1);
+            if (open_count == 2) {
+                setTimeout(() => {
+                    if (open_card1 == open_card2) {
+                        all_card -= 2;
+                        $("[state=1]").fadeOut(1000).attr("state", 2);
+                    } else {
+                        $("[state=1]").attr("state", 0).attr("src", "img/0.jpg");
+                    }
+                    open_count = 0;
+                    open_card2 = "";
+                    open_card1 = "";
+
+
+                }, 2000)
+            }
+
+
+        }
+
+        function startGame() {
+            shuffle();
+            open_count = 0;
+            all_card = 36;
+            $("#view2").show();
+            $("#view1").hide();
+        }
+
+        function stopGame() {
+            $("#view2").hide();
+            $("#view1").show();
+        }
+
+        function shuffle() {
+            var list = [];
+            for (var i = 1; i <= 36; i++) {
+                list.push(i);
+                list.push(i);
+            }
+
+            for (var i = 1; i <= 36; i++) {
+                var a = Math.floor(Math.random() * 36); // สุ่มตำแหน่งที่จะสลับ
+                var t = list[i];
+                list[i] = list[a];
+                list[a] = t;
+            }
+
+            $("#view2 img").attr("src", "img/0.jpg").attr("state", 0);
+
+            for (var i = 1; i <= 36; i++) {
+                $("#img" + i).attr("srcx", "img/" + list[i] + ".jpg");
+
+            }
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
