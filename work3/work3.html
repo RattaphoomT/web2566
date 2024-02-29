@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Work 3: เกมจับคู่ภาพ โดยใช้ VueJS</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #app {
+            max-width: 80%;
+            /* กำหนดความกว้างสูงสุด */
+            text-align: center;
+            /* จัดเนื้อหาให้อยู่ตรงกลางแนวนอน */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-container>
+                <v-card style="max-width: 900px">
+                    <v-card-title class="bg-blue-darken-4">{{title}}</v-card-title>
+                    <v-card-text class="pa-4">
+                        <template v-if="state==0">
+                            <v-btn @click="shuffle()" class="mr-2">เริ่มเล่น</v-btn>
+                            <v-btn href="/index.html" >กลับหน้าหลัก</v-btn>
+                        </template>
+                        <template v-if="state==1">
+                            <v-container>
+                                <v-row>
+                                    <v-col v-for="(c,i) of cards" :key="i" cols="2" class='text-center'>
+                                        <img v-if="c.s==0" src="/work1/img/0.jpg" width="80%" @click='imgclick(c)' />
+                                        <img v-if="c.s==1" :src="'/work1/img/'+c.t+'.jpg'" width="80%" />
+                                    </v-col>
+                                </v-row>
+                            </v-container>
+                            <v-btn @click="state=0" class="mt-3">จบเกม</v-btn>
+                            <v-btn href="/index.html" class="mt-3">กลับหน้าหลัก</v-btn>
+                        </template>
+                        <template v-if="state==2">
+                            <h1>ชนะแล้ว เก่งมาก</h1>
+                            <br>
+                            <v-btn @click="state=0">ตกลง</v-btn>
+                        </template>
+                    </v-card-text>
+                    <v-buttom-navigation class="bg-grey">
+                        <div class="text-body-1 text-center mb-3" style="color: black;">{{footer}}</div>
+                    </v-buttom-navigation>
+                </v-card>
+
+            </v-container>
+        </v-app>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@3.4.10/dist/vuetify.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@3.4.10/dist/vuetify.min.js"></script>
+
+    <script>
+
+        const vuetify = Vuetify.createVuetify();
+        const app = Vue.createApp({
+            data() {
+                return {
+                    title: "Work 3: เกมจับคู่ภาพ โดยใช้ VueJS",
+                    footer: "643021335-2 รัฐภูมิ ธนาโชติอัครโภคิน CS-VIP",
+                    state: 0,
+                    cards: [],
+                    cards_opened: [],
+                    cards_count: 0,
+                };
+            },
+            methods: {
+                shuffle() {
+                    this.state = 1;
+                    this.cards = [];
+                    this.cards_opened = [];
+                    this.cards_count = 36; // เปลี่ยนจำนวนการ์ดเป็น 36
+
+                    // สร้างการ์ด 36 ใบ
+                    for (var i = 1; i <= 18; i++) { // เพิ่มจำนวนเลขที่แสดงภาพในการ์ดเป็น 18
+                        this.cards.push({ t: i, s: 0 });
+                        this.cards.push({ t: i, s: 0 });
+                    }
+
+                    // สลับตำแหน่งการ์ด
+                    for (var i = 0; i < 100; i++) {
+                        var a = Math.floor(Math.random() * 36); // สุ่มตำแหน่งการ์ด
+                        var b = Math.floor(Math.random() * 36);
+                        var t = this.cards[a];
+                        this.cards[a] = this.cards[b];
+                        this.cards[b] = t;
+                    }
+                },
+                imgclick(c) {
+                    if (this.cards_opened.length < 2) {
+                        c.s = 1;
+                        this.cards_opened.push(c);
+                        if (this.cards_opened.length == 2) {
+                            setTimeout(this.checkCard, 1000);
+                        }
+                    }
+                },
+                checkCard() {
+                    var a = this.cards_opened[0];
+                    var b = this.cards_opened[1];
+                    this.cards_opened = [];
+                    if (a.t == b.t) {
+                        a.s = 2;
+                        b.s = 2;
+                        this.cards_count -= 2;
+                    } else {
+                        a.s = 0;
+                        b.s = 0;
+                    }
+                    if (this.cards_count == 0) {
+                        this.state = 2;
+                    }
+                },
+            },
+        });
+        app.use(vuetify).mount("#app");
+    </script>
+
+</body>
+
+</html>
