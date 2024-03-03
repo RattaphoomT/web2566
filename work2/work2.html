@@ -1,0 +1,134 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+<style>
+    a-assets,
+    a-scene video,
+    a-scene img,
+    a-scene audio {
+        display: none;
+    }
+
+    .a-inspector-loader {
+        background-color: #ed3160;
+        position: fixed;
+        left: 3px;
+        top: 3px;
+        padding: 6px 10px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+        font-family: Roboto, sans-serif;
+        text-align: center;
+        z-index: 99999;
+        width: 204px;
+    }
+
+    @keyframes dots-1 {
+        from {
+            opacity: 0;
+        }
+
+        25% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes dots-2 {
+        from {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes dots-3 {
+        from {
+            opacity: 0;
+        }
+
+        75% {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes dots-1 {
+        from {
+            opacity: 0;
+        }
+
+        25% {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes dots-2 {
+        from {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes dots-3 {
+        from {
+            opacity: 0;
+        }
+
+        75% {
+            opacity: 1;
+        }
+    }
+
+    .a-inspector-loader .dots span {
+        animation: dots-1 2s infinite steps(1);
+        -webkit-animation: dots-1 2s infinite steps(1);
+    }
+
+    .a-inspector-loader .dots span:first-child+span {
+        animation-name: dots-2;
+        -webkit-animation-name: dots-2;
+    }
+
+    .a-inspector-loader .dots span:first-child+span+span {
+        animation-name: dots-3;
+        -webkit-animation-name: dots-3;
+    }
+
+    a-scene {
+        display: block;
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+</style>
+
+<body>
+    <a-scene inspector="" keyboard-shortcuts="" screenshot="" xr-mode-ui="" device-orientation-permission-ui="">
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <a-text value="Work 2" position="0 -5 -2.2"
+            animation="property: position; to: 0 1.5 -2.2; dur: 2000; easing: linear; loop: True" text=""></a-text>
+        <a-text value="Arnuphap thaiwong 643020660-6" position="-5 1 -2"
+            animation="property: position; to: -1 1 -2.2; dur: 8000; easing: linear; loop: false" text=""></a-text>
+        <a-assets>
+            <img id="room" src="./work1/bg.jpg">
+            <img id="man" src="./img/me.jpg">
+        </a-assets>
+        <a-sky color="#ECFFFF" src="#room" radius="40" material="" geometry="" scale=""></a-sky>
+        <a-box position="0 0 0" width="2" height="2"
+            animation="property: position; to: 0 1 -5; dur: 2000; easing: linear"
+            animation__2="property: rotation;; to: 0 360 0; dur: 5000; loop: true;" src="#man" material=""
+            geometry=""></a-box>
+
+    </a-scene>
+
+
+</body>
+
+</html>
