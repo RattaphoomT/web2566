@@ -130,13 +130,13 @@
             render() {
                 var img = (
                     <img
-                        src="/work1/img/0.jpg"
+                        src="../work1/img/0.jpg"
                         width="100%"
                         onClick={() => this.imgClick()}
                     />
                 );
                 if (this.state.s == 1) {
-                    img = <img src={"/work1/img/" + this.props.t + ".jpg"} width="100%" />;
+                    img = <img src={"../work1/img/" + this.props.t + ".jpg"} width="100%" />;
                 }
                 if (this.state.s == 2) {
                     img = <div />;  // บัตรภาพถูกลบออก ไม่ต้องแสดงภาพ
