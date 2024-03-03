@@ -111,14 +111,15 @@
 
 <body>
     <a-scene inspector="" keyboard-shortcuts="" screenshot="" xr-mode-ui="" device-orientation-permission-ui="">
-        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <a-box id="movingBox" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"
+            animation="property: position; to: 3 0.5 -3; dur: 2000; easing: linear; loop: false"></a-box>
         <a-text value="Work 2" position="0 -5 -2.2"
             animation="property: position; to: 0 1.5 -2.2; dur: 2000; easing: linear; loop: True" text=""></a-text>
-        <a-text value="Arnuphap thaiwong 643020660-6" position="-5 1 -2"
+        <a-text value="Rattaphoom Thanachotakkaraphokhin 6430221335-2" position="-5 1 3"
             animation="property: position; to: -1 1 -2.2; dur: 8000; easing: linear; loop: false" text=""></a-text>
         <a-assets>
-            <img id="room" src="./work1/bg.jpg">
-            <img id="man" src="./img/me.jpg">
+            <img id="room" src="./IMG_5209.jpeg">
+            <img id="man" src="./281691103_1844051832603174_4111776093914360179_n.jpg">
         </a-assets>
         <a-sky color="#ECFFFF" src="#room" radius="40" material="" geometry="" scale=""></a-sky>
         <a-box position="0 0 0" width="2" height="2"
